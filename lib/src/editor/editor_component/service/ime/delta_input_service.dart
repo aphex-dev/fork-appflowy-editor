@@ -25,13 +25,6 @@ class DeltaTextInputService extends TextInputService with DeltaTextInputClient {
   @override
   TextEditingValue? currentTextEditingValue;
 
-  // Aphex patch: Flutter 3.44+ added TextInputClient.onFocusReceived, and
-  // DeltaTextInputClient only implements TextInputClient, so its default body
-  // doesn't carry over. Matches the framework default. Upstream main has the
-  // same fix since #1228, unreleased as of 6.2.0.
-  @override
-  bool onFocusReceived() => false;
-
   TextInputConnection? _textInputConnection;
 
   @override
